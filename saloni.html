@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        }
+        .box-wrapper{
+         transform: rotateX(180deg); 
+        }
+        .container{
+            margin: 20px auto;
+            width: 750px;
+            height: 400px;
+            border: 10px solid #000;
+            display:flex;
+            background-color:#000;
+        }
+        .child{
+            width: 25%;
+            height: 100%;
+           
+        }
+        
+         #div1{
+             background-color: rgb(209, 25, 209);
+         }
+        
+         #div2{
+             background-color: rgb(236, 12, 150);
+         }
+         #div3{
+             background-color: rgb(212, 8, 93);
+         }
+         #div4{
+             background-color: rgb(219, 126, 5);
+         }
+         #div5{
+             background-color: yellow;
+         }
+          
+         .button-section{
+            margin: 30px auto;
+          
+              width: 750px;
+              display: flex;
+              justify-content: space-around;
+         }
+         .button-section{
+           border:none;
+           outline:none;
+         }
+         .start{
+           
+             background-color: rgb(56, 243, 56);
+           
+         }
+         .stop{
+           
+             background-color: red;
+            
+         }
+         .start,.stop{
+            color: #fff;
+            font-size: 20px;
+            padding: 5px 10px;
+         }
+    </style>
+</head>
+<body>
+<div class="box-wrapper">
+
+
+<div class="container">
+    <div class="child" id="div1"></div>
+    <div class="child" id="div2"></div>
+    <div class="child" id="div3"></div>
+    <div class="child" id="div4"></div>
+    <div class="child" id="div5"></div>
+</div>
+</div>
+<div class="button-section">
+    <button class="start" onclick="start()">start</button>
+    <button class="stop" onclick="stop()">stop</button>
+</div>
+</body>
+<script>
+    let box1=document.querySelector('#div1');
+    let box2=document.querySelector('#div2');
+    let box3=document.querySelector('#div3');
+    let box4=document.querySelector('#div4');
+    let box5=document.querySelector('#div5');
+    let flag=true;
+    
+    function start(){
+    
+    if(!flag){
+    return 0;
+    }
+        box1.style.height=(`${Math.random()*100}%`);
+          box2.style.height=(`${Math.random()*100}%`);
+            box3.style.height=(`${Math.random()*100}%`);
+              box4.style.height=(`${Math.random()*100}%`);
+                box5.style.height=(`${Math.random()*100}%`); 
+                setTimeout(()=>{
+                start()
+                },1500);
+          
+           
+          }
+    function stop(){
+    flag=false;
+    }
+    
+</script>
+</html>
